@@ -33,6 +33,11 @@ def bb():
         b = pickle.load(file)
     return str(b)
 
+@app.route('/c')
+def cc():
+    with open('varr.pkl', 'rb') as file:
+        b = pickle.load(file)
+    return str(b)
 
 if __name__ == '__main__':
     app.run(debug=True)
