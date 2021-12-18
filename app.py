@@ -19,7 +19,7 @@ def emailsspam():
             classifier=dill.load(io)
         input_text = vector.transform([text])
         result = classifier.predict(input_text)
-        if str(result) == '1':
+        if str(result[0]) == '1':
             return render_template('emailsspam.html', status='danger', result='Spam')
         else:
             return render_template('emailsspam.html', status='success', result='Not Spam')   
