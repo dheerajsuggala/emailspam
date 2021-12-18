@@ -27,6 +27,12 @@ def emailsspam():
     
     return render_template('emailsspam.html')
 
+@app.route('/b')
+def bb():
+    with open('var.pkl', 'rb') as file:
+        b = pickle.load(file)
+    return str(b)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
