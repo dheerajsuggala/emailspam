@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request
-# import joblib
+import joblib
 
 
 app = Flask(__name__)
-# classifier = joblib.load('emailspam.pkl')
-# vector = joblib.load('vector.pkl')
+classifier = joblib.load('emailspam.pkl')
+vector = joblib.load('vector.pkl')
 
 
 @app.route('/', methods=['POST', 'GET'])
