@@ -6,11 +6,11 @@ app = Flask(__name__)
 # classifier = joblib.load('emailspam.pkl')
 # vector = joblib.load('vector.pkl')
 
-with open('emailspam.pkl', 'rb') as file:
-    classifier = pickle.load(file)
+# with open('emailspam.pkl', 'rb') as file:
+#     classifier = pickle.load(file)
 
-with open('vector.pkl', 'rb') as file:
-    vector = pickle.load(file)
+# with open('vector.pkl', 'rb') as file:
+#     vector = pickle.load(file)
 
 
 @app.route('/', methods=['POST', 'GET'])
@@ -23,7 +23,7 @@ def emailsspam():
 #             return render_template('emailsspam.html', status='danger', result='Spam')
 #         else:
 #             return render_template('emailsspam.html', status='success', result='Not Spam')
-        return type(vector)
+        return 'TRUE'
     
     return render_template('emailsspam.html')
 
