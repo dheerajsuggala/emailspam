@@ -13,7 +13,7 @@ def emailsspam():
             vector=dill.load(io)
         with open('classifier.joblib','rb') as io:
             classifier=dill.load(io)
-        input_text = vector.transform(text)
+        input_text = vector.transform([text])
         result = classifier.predict(input_text)
         if str(result) == '1':
             return render_template('emailsspam.html', status='danger', result='Spam')
