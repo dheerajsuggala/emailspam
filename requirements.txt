@@ -11,4 +11,4 @@ gunicorn
 scikit-learn
 dill
 nltk
-strings
+
