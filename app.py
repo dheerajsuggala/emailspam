@@ -17,13 +17,13 @@ with open('vector.pkl', 'rb') as file:
 def emailsspam():
     if request.method == 'POST':
         text = request.form['email_body']
-#         input_text = vector.transform(text)
-#         result = classifier.predict(input_text)
-#         if str(result) == '1':
-#             return render_template('emailsspam.html', status='danger', result='Spam')
-#         else:
-#             return render_template('emailsspam.html', status='success', result='Not Spam')
-        return text
+        input_text = vector.transform(text)
+        result = classifier.predict(input_text)
+        if str(result) == '1':
+            return render_template('emailsspam.html', status='danger', result='Spam')
+        else:
+            return render_template('emailsspam.html', status='success', result='Not Spam')
+    
     return render_template('emailsspam.html')
 
 
