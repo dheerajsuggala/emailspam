@@ -5,9 +5,6 @@ import pickle
 app = Flask(__name__)
 
 
-
-
-
 @app.route('/', methods=['POST', 'GET'])
 def emailsspam():
     if request.method == 'POST':
@@ -16,12 +13,6 @@ def emailsspam():
             classifier = pickle.load(file)
         with open('vector.pkl', 'rb') as file:
             vector = pickle.load(file)
-#         input_text = vector.transform(text)
-#         result = classifier.predict(input_text)
-#         if str(result) == '1':
-#             return render_template('emailsspam.html', status='danger', result='Spam')
-#         else:
-#             return render_template('emailsspam.html', status='success', result='Not Spam')
         return 'TRUE'
     
     return render_template('emailsspam.html')
