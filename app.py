@@ -1,6 +1,4 @@
 from flask import Flask, render_template, request
-import __main__
-__main__.FlexibleScalar = FlexibleScalar
 import joblib
 
 
