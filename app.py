@@ -19,6 +19,7 @@ def emailsspam():
         with open('classifier.joblib','rb') as io:
             classifier=dill.load(io)
         print('------------------>>>>>>2', text)
+        import string
         input_text = vector.transform([text])
         print('------------------>>>>>>3')
         result = classifier.predict(input_text)
