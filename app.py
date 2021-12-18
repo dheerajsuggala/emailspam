@@ -1,10 +1,16 @@
 from flask import Flask, render_template, request
-import joblib
+import pickle
 
 
 app = Flask(__name__)
-classifier = joblib.load('emailspam.pkl')
-vector = joblib.load('vector.pkl')
+# classifier = joblib.load('emailspam.pkl')
+# vector = joblib.load('vector.pkl')
+
+with open('emailspam.pkl', 'rb') as file:
+    classifier = pickle.load(file)
+
+with open('vector.pkl', 'rb') as file:
+    vector = pickle.load(file)
 
 
 @app.route('/', methods=['POST', 'GET'])
