@@ -10,3 +10,4 @@ Werkzeug==2.0.2
 gunicorn
 scikit-learn
 dill
+nltk
